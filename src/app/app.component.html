@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button 
+      class="btn btn-primary"
+      (click)="onlyOdd=!onlyOdd">
+      only show add number 
+    </button>
+    <br>
+    <br>
+    <ul class="list-group">
+      <div *ngIf="onlyOdd">
+      <li class="list-group-item"
+      [ngClass]="{'odd': true}"
+      [ngStyle]="{'backgroundColor': true ? 'yellow':'transparent'}"
+      *ngFor="let odd of oddNumbers">
+      {{ odd }}
+      </li>
+    </div>
+    <div *ngIf="!onlyOdd">
+      <li class="list-group-item"
+      [ngClass]="{'even': true}"
+      [ngStyle]="{'backgroundColor': false ? 'yellow':'transparent'}"
+      *ngFor="let even of evenNumbers">
+      {{ even }}
+      </li>
+    </div>
+    </ul>
+    <p appBasicHighlight> Pake highlight</p>
+    <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor] = "'red'"> Yang Better</p>
+    </div>
+  </div>
+</div>
